@@ -1,9 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:open_pms_flutter/pages/home.dart';
 import 'package:open_pms_flutter/pages/personal.dart';
 import 'package:open_pms_flutter/pages/workbench.dart';
 
 void main() {
+  Dio().options.baseUrl = "http://127.0.0.1:8000/api/v1/pms";
   runApp(const MyApp());
 }
 
@@ -24,6 +26,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.blue,
+        cardTheme: const CardTheme(
+          elevation: 3,
+          // color: Colors.white,
+          surfaceTintColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(24)),
+          ),
+        ),
       ),
       home: StatefulBuilder(builder: (context, setState) {
         return Scaffold(
@@ -45,7 +55,7 @@ class MyApp extends StatelessWidget {
                 icon: Icon(
                   Icons.home_rounded,
                 ),
-                label: "",
+                label: "Home",
               ),
               BottomNavigationBarItem(
                 icon: Stack(
@@ -79,13 +89,13 @@ class MyApp extends StatelessWidget {
                     const Icon(Icons.apps),
                   ],
                 ),
-                label: "",
+                label: "Workbench",
               ),
               const BottomNavigationBarItem(
                 icon: Icon(
                   Icons.person,
                 ),
-                label: "",
+                label: "User",
               ),
             ],
             currentIndex: currentPage,

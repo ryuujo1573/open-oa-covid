@@ -11,7 +11,7 @@ class _WorkbenchPageState extends State<WorkbenchPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey,
+      color: Colors.black12,
     );
   }
 }
