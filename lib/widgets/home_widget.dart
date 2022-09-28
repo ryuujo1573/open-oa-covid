@@ -7,9 +7,9 @@ class HomeWidget extends StatelessWidget {
       {super.key,
       required this.name,
       required this.icon,
-      required this.children});
+      required this.children,});
 
-  final String name;
+  final Widget name;
   final Widget icon;
   final List<Widget> children;
 
@@ -38,7 +38,7 @@ class HomeWidget extends StatelessWidget {
                   child: icon,
                 ),
               ),
-              Text(name),
+              name,
             ]),
           ),
           ...children,

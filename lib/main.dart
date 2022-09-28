@@ -5,7 +5,6 @@ import 'package:open_pms_flutter/pages/personal.dart';
 import 'package:open_pms_flutter/pages/workbench.dart';
 
 void main() {
-  Dio().options.baseUrl = "http://127.0.0.1:8000/api/v1/pms";
   runApp(const MyApp());
 }
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.blue,
         cardTheme: const CardTheme(
-          elevation: 3,
+          elevation: 4,
           // color: Colors.white,
           surfaceTintColor: Colors.white,
           shape: RoundedRectangleBorder(
